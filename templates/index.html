@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Predictor</title>
+</head>
+<body>
+    <h2>Enter Patient Data</h2>
+    <form action="/predict" method="post">
+        Age: <input name="age"><br>
+        Blood-pressure: <input name="trestbps"><br>
+        Cholesterol: <input name="chol"><br>
+        Max-heart-rate: <input name="thalch"><br>
+        St-depression: <input name="oldpeak"><br>
+        blood-sugar: <input name="fbs"><br><br>
+
+        Sex: <select name="sex">
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select><br>
+        Chest Pain (cp): <select name="cp">
+            <option value="0">Typical</option>
+            <option value="1">Atypical</option>
+            <option value="2">Non-anginal</option>
+            <option value="3">Asymptomatic</option>
+        </select><br>
+        Resting-ecg: <select name="restecg">
+            <option value="0">Normal</option>
+            <option value="1">Abnormal</option>
+            <option value="2">LV hypertrophy</option>
+        </select><br>
+        St-slope: <select name="slope">
+            <option value="0">Upsloping</option>
+            <option value="1">Flat</option>
+            <option value="2">Downsloping</option>
+        </select><br>
+        Mps-defect: <select name="thal">
+            <option value="3">Normal</option>
+            <option value="6">Fixed defect</option>
+            <option value="7">Reversible defect</option>
+        </select><br>
+        Exe-angina: <select name="exang">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+        Num-vessel-affected: <select name="ca">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+    {% if result %}
+        <h3>{{ result }}</h3>
+    {% endif %}
+</body>
+</html>
